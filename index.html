@@ -516,22 +516,24 @@
                         <p class="text-rose-200 font-serif text-lg italic">
                             Happy 20th birthday, my love. ❤️
                         </p>
-                        <p>
-                            Happy Birthday to my amazing, kindhearted, and beautiful girl in my universe.
-                            I don’t even know where to start because when I think about us, there are just so many little memories that come to my mind.
+                         <p>
+                       As you step into your 20s, my biggest wish for you is that you always stay as bright, kind, and genuinely happy as you are. I hope this new chapter brings you endless joy, success in everything you chase, and the courage to achieve all your big dreams. I’ll always be right here, cheering for you through it all.
                         </p>
                         <p>
-                            You’re so beautiful to me, and I don’t think I’ll ever get tired of looking at you. Sometimes I just look at you and wonder how I got so lucky to have you in my life. You’ve become such a big part of my life, and I’m so grateful for every laugh, every random conversation, every stupid argument, and every little moment we’ve shared.
+                       When I think about us, there are just so many little memories that come to my mind.Our First date, First Photobooth, First Trip, First Oversea Date,and so on everything is memorable.
+                        </p>
+                        <p>
+                            Sometimes I just look at you and wonder how I got so lucky to have you in my life. You’ve become such a big part of my life, and I’m so grateful for every laugh, every random conversation, every stupid argument, and every little moment we’ve shared.
                         </p>
                         <p>
                            Our anniversary being on your birthday is something you’re definitely never going to let me forget. 😂❤️ I just hope we keep choosing each other, even on the difficult days. I hope we keep making memories that someday we’ll look back on and laugh about.
                         </p>
                         <p>
-                           So, Happy 20th birthday, baby and Happy anniversary to us. ❤️
+                           Happy 20th birthday, and Happy anniversary to us. Always here for you. ❤️
                         </p>
                         <p class="text-right font-cursive text-3xl text-roseGlow pt-4">
                             Forever yours,<br>
-                            <span class="text-crimson text-glow">Ko Ko♥</span>
+                            <span class="text-crimson text-glow">Ko Ko</span>
                         </p>
                     </div>
 
@@ -968,15 +970,15 @@
 
         // Edit this list to change the ten photos shown on the Memories page.
         const MEMORY_PHOTOS = [
-            { src: 'Firstdate.JPG', title: 'Our First Date', desc: 'The day our little story began.' },
-            { src: 'breadtalk.jpg', title: 'BreadTalk & Deep Talks ☕️✨', desc: 'Just endless conversations, deep talks, and getting to know the real us.' },
-            { src: 'lastbd.jpg', title: 'Another Year, Same Side 🎂🤍', desc: 'Celebrating you is my favorite thing to do.' },
-            { src: '3.jpg', title: 'Our Favorite Moment', desc: 'Beside the soothing sound of the waves, under the soft starry lights together.' },
-            { src: '5.jpg', title: 'Pure Intentions ✨', desc: 'Your happiness is my favorite thing. Always wishing the best for you.' },
+            { src: 'Firstdate.JPG', title: 'Our First Date', desc: 'ပြန်တွေးကြည့်လိုက်ရင် မနေ့တနေ့ကလိုပဲ' },
+            { src: 'breadtalk.jpg', title: 'BreadTalk & Deep Talks ☕️✨', desc: 'ကြည်နူးကြ ၊ ရန်ဖြစ်ကြ ၊ စကားတွေအများကြီးပြောဖြစ်ခဲ့ကြတဲ့ Breadtalk ကလဲ ကိုကိုတို့အမှတ်တရတွေထဲက တစ်ခုပေါ့၊ ' },
+            { src: 'lastbd.jpg', title: 'Another Year, Same Side 🎂🤍', desc: 'နောက်ထပ် နှစ်တွေ အများကြီးထိ ဘေးနားမှာနေပြီး နေခြည့်ကို ပျော်အောင်လုပ်ပေးချင် သေးတယ်' },
+            { src: '3.jpg', title: 'Our Favorite Moment', desc: 'Where We Said "Us" 🌊❤️' },
+            { src: '5.jpg', title: 'Pure Intentions ✨', desc: 'ကို့အချစ်တွေနဲ့ နေ့ရက်တိုင်းမှာပျော်နေစေချင်တယ်' },
             { src: '6.jpg', title: 'Your Radiant Smile', desc: 'The prettiest smile in the universe.' },
-            { src: '2.jpg', title: 'Adventures Ahead', desc: 'Looking forward to endless dates with you.' },
+            { src: '2.jpg', title: 'Adventures Ahead', desc: 'No matter what comes our way, I’ll face it with you by my side.' },
             { src: 'littlemoment.JPG', title: 'Little Moments', desc: 'Every little moment with you is special.' },
-            { src: '908D13CB-D141-4DD4-A361-D20401127AFC.jpeg', title: 'Always Us', desc: 'My favorite person in every frame.' },
+            { src: '908D13CB-D141-4DD4-A361-D20401127AFC.jpeg', title: 'The Night We Danced', desc: 'No matter how loud the music gets, my eyes are always on you.' },
             { type: 'video', src: 'ncend.mp4', title: 'Forever Together', desc: 'Here is to all the moments still ahead.' },
         ]
 
@@ -1091,11 +1093,11 @@
             const minutes = Math.floor((totalSeconds % 3600) / 60);
             const seconds = totalSeconds % 60;
 
-            document.getElementById('dayCount').textContent = days;
             document.getElementById('counterDays').textContent = days;
             document.getElementById('counterHours').textContent = String(hours).padStart(2, '0');
             document.getElementById('counterMinutes').textContent = String(minutes).padStart(2, '0');
             document.getElementById('counterSeconds').textContent = String(seconds).padStart(2, '0');
+            document.getElementById('dayCount').textContent = document.getElementById('counterDays').textContent;
         }
 
         window.onload = function() {
