@@ -6,11 +6,13 @@
     <title>My Love ♥</title>
     
     <!-- Tailwind CSS -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
@@ -23,11 +25,9 @@
                 extend: {
                     colors: {
                         obsidian: '#080205',
-                        night: '#12060c',
                         crimson: '#ff0055',
                         cherry: '#ff2a5f',
-                        roseGlow: '#ff7597',
-                        cardBg: 'rgba(20, 8, 15, 0.75)'
+                        roseGlow: '#ff7597'
                     },
                     fontFamily: {
                         cursive: ['"Great Vibes"', 'cursive'],
@@ -36,19 +36,9 @@
                     },
                     animation: {
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
                         'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both'
                     },
                     keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-                            '50%': { transform: 'translateY(-12px) rotate(2deg)' }
-                        },
-                        glow: {
-                            '0%': { boxShadow: '0 0 15px rgba(255, 0, 85, 0.4)' },
-                            '100%': { boxShadow: '0 0 30px rgba(255, 42, 95, 0.8), 0 0 40px rgba(255, 0, 85, 0.5)' }
-                        },
                         shake: {
                             '10%, 90%': { transform: 'translate3d(-2px, 0, 0)' },
                             '20%, 80%': { transform: 'translate3d(4px, 0, 0)' },
@@ -93,46 +83,6 @@
             border-color: rgba(255, 42, 95, 0.6);
             transform: translateY(-5px) scale(1.01);
             box-shadow: 0 15px 35px rgba(255, 0, 85, 0.35), inset 0 0 20px rgba(255, 0, 85, 0.2);
-        }
-
-        /* Polaroid styling */
-        .polaroid-frame {
-            background: #ffffff;
-            color: #111;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 15px rgba(255, 0, 85, 0.2);
-            transition: all 0.4s ease;
-        }
-        .polaroid-frame:hover {
-            transform: scale(1.03) rotate(0deg) !important;
-            box-shadow: 0 20px 40px rgba(255, 0, 85, 0.4);
-            z-index: 20;
-        }
-
-        /* Tape effect on polaroids */
-        .polaroid-tape {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%) rotate(-2deg);
-            width: 90px;
-            height: 26px;
-            background: rgba(255, 255, 255, 0.35);
-            backdrop-filter: blur(2px);
-            border: 1px dashed rgba(255,255,255,0.5);
-            z-index: 10;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Envelope CSS Animation */
-        .envelope-wrapper {
-            perspective: 1000px;
-        }
-        .envelope-flap {
-            transform-origin: top;
-            transition: transform 0.6s ease-in-out;
-        }
-        .envelope-wrapper.open .envelope-flap {
-            transform: rotateX(180deg);
         }
 
         /* Sound visualizer animation */
@@ -211,49 +161,6 @@
             height: 100vh;
         }
 
-        /* Memory book styling */
-        .memory-book {
-            position: relative;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2.5rem 1.25rem 3rem;
-            background: linear-gradient(90deg, rgba(77, 12, 31, 0.08), transparent 3%, transparent 97%, rgba(77, 12, 31, 0.08)), rgba(244, 234, 220, 0.3);
-            border: 1px solid rgba(255, 190, 151, 0.2);
-            border-radius: 8px;
-            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2), inset 0 0 25px rgba(136, 71, 42, 0.05);
-        }
-        .memory-book::before {
-            content: '';
-            position: absolute;
-            inset: 0.8rem;
-            border: 1px solid rgba(135, 77, 52, 0.25);
-            pointer-events: none;
-        }
-        .memory-book-header { position: relative; text-align: center; color: #3c1d24; padding: 0.25rem 0 2.25rem; }
-        .memory-book-header::after { content: '✦  ✦  ✦'; display: block; margin-top: 0.8rem; color: #a35358; letter-spacing: 0.8rem; font-size: 0.75rem; }
-        .memory-book-kicker { color: #a35358; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; }
-        .memory-book-title { margin-top: 0.4rem; font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 4.5rem); font-style: italic; line-height: 1; }
-        .memory-book-subtitle { max-width: 34rem; margin: 0.9rem auto 0; color: #765d60; font-family: 'Playfair Display', serif; font-size: 0.95rem; line-height: 1.7; }
-        .memory-entry { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(1.5rem, 5vw, 5rem); padding: 2.4rem clamp(0.5rem, 4vw, 3.5rem); border-top: 1px solid rgba(135, 77, 52, 0.2); }
-        .memory-entry:nth-child(even) .memory-entry-image { order: 2; }
-        .memory-entry:nth-child(even) .memory-entry-copy { order: 1; text-align: right; }
-        .memory-entry-image { position: relative; padding: 0.65rem; background: rgba(247, 239, 232, 0.9); border: 1px solid rgba(135, 77, 52, 0.18); box-shadow: 7px 9px 0 rgba(104, 45, 46, 0.08), 0 12px 25px rgba(64, 25, 25, 0.12); transform: rotate(-1.5deg); cursor: pointer; transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease; animation: gentleFloat 7s ease-in-out infinite; }
-        .memory-entry:nth-child(even) .memory-entry-image { transform: rotate(1.5deg); }
-        .memory-entry-image:hover { transform: translateY(-7px) rotate(0deg) scale(1.02); box-shadow: 10px 18px 30px rgba(64, 25, 25, 0.18); background: rgba(250, 244, 238, 0.98); }
-        .memory-entry-image img, .memory-entry-image video { display: block; width: 100%; aspect-ratio: 1.18 / 1; object-fit: cover; filter: saturate(0.84) contrast(1.03); }
-        .memory-entry-image::after { content: 'view memory'; position: absolute; right: 1rem; bottom: 1rem; padding: 0.35rem 0.6rem; background: rgba(47, 18, 25, 0.78); color: #fff8ec; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; }
-        .memory-entry-image:hover::after { opacity: 1; }
-        .memory-entry-copy { color: #fff8f2; text-shadow: 0 2px 10px rgba(35, 5, 14, 0.7); }
-        .memory-entry-number { display: none; }
-        .memory-entry-copy h3 { margin-top: 0.45rem; font-family: 'Playfair Display', serif; font-size: clamp(1.55rem, 3vw, 2.4rem); font-style: italic; line-height: 1.15; }
-        .memory-entry-copy p { max-width: 20rem; margin-top: 0.75rem; color: rgba(255, 235, 230, 0.92); font-family: 'Playfair Display', serif; font-size: 0.95rem; line-height: 1.7; font-weight: 500; }
-        .memory-entry:nth-child(even) .memory-entry-copy p { margin-left: auto; }
-        .memory-entry-rule { width: 3.5rem; height: 1px; margin-top: 1.2rem; background: #a35358; }
-        .memory-entry:nth-child(even) .memory-entry-rule { margin-left: auto; }
-        .memory-book-footer { position: relative; margin: 0.5rem 0.75rem 0; padding: 2rem 1rem 0.25rem; border-top: 1px solid rgba(135, 77, 52, 0.2); text-align: center; color: #765d60; font-family: 'Playfair Display', serif; }
-        .memory-book-footer::before { content: '✦'; display: block; margin-bottom: 0.65rem; color: #a35358; }
-        .memory-book-next { display: inline-flex; align-items: center; gap: 0.55rem; margin-top: 1rem; padding: 0.7rem 1.1rem; border: 1px solid rgba(163, 83, 88, 0.55); border-radius: 999px; color: #6b3039; font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease; }
-        .memory-book-next:hover { background: #6b3039; color: #fff8ec; transform: translateY(-2px); }
         .memory-ending { position: relative; min-height: min(76vh, 680px); display: grid; place-items: center; margin: 1.5rem auto 0; overflow: hidden; border: 1px solid rgba(255, 117, 151, 0.18); border-radius: 1.5rem; background: radial-gradient(circle at center, rgba(255, 42, 95, 0.12), transparent 48%), rgba(18, 6, 12, 0.7); opacity: 1; transform: translateY(45px) scale(0.97); transition: opacity 1s ease, transform 1s ease; }
         .memory-ending.is-visible { opacity: 1; transform: translateY(0) scale(1); }
         .memory-ending::before, .memory-ending::after { content: '♥'; position: absolute; color: #ff2a5f; font-size: 1.4rem; text-shadow: 0 0 18px #ff0055; animation: celebrationFloat 4s ease-in-out infinite; }
@@ -266,20 +173,7 @@
         .memory-ending-title { max-width: 34rem; margin: 0.65rem auto 0; color: #fff; font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 9vw, 6rem); line-height: 0.98; text-shadow: 0 0 20px rgba(255, 42, 95, 0.75); }
         .memory-ending-copy { max-width: 30rem; margin: 1.25rem auto 0; color: rgba(255, 219, 227, 0.84); font-family: 'Playfair Display', serif; font-size: 1rem; line-height: 1.8; }
         @keyframes celebrationFloat { 0%, 100% { transform: translateY(0) rotate(-8deg); } 50% { transform: translateY(-18px) rotate(8deg); } }
-        @keyframes gentleFloat { 0%, 100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-6px) rotate(-0.5deg); } }
         @media (max-width: 640px) {
-            .memory-book { padding: 1.4rem 0.7rem 1.8rem; }
-            .memory-book::before { inset: 0.45rem; }
-            .memory-book-header { padding: 0.25rem 0.7rem 1.6rem; }
-            .memory-book-title { font-size: clamp(2.1rem, 11vw, 3.2rem); }
-            .memory-book-subtitle { font-size: 0.84rem; line-height: 1.55; }
-            .memory-entry, .memory-entry:nth-child(even) { grid-template-columns: 1fr; gap: 1.3rem; padding: 1.8rem 0.75rem; }
-            .memory-entry-copy, .memory-entry:nth-child(even) .memory-entry-copy { order: -1; text-align: left; }
-            .memory-entry-image, .memory-entry:nth-child(even) .memory-entry-image { order: 0; }
-            .memory-entry:nth-child(even) .memory-entry-copy p, .memory-entry:nth-child(even) .memory-entry-rule { margin-left: 0; }
-            .memory-entry-copy h3 { font-size: 1.7rem; }
-            .memory-entry-copy p { font-size: 0.86rem; }
-            .memory-book-footer { margin: 0.5rem 0.3rem 0; padding-top: 1.5rem; }
             .memory-ending { min-height: 70vh; margin-top: 1rem; border-radius: 1.25rem; }
             .memory-ending-content { padding: 1.25rem; }
             .memory-ending-title { font-size: clamp(3.3rem, 16vw, 5rem); }
@@ -491,7 +385,7 @@
 
             <!-- Envelope & Glowing Letter Card -->
             <div class="max-w-3xl mx-auto">
-                <div id="envelopeContainer" class="envelope-wrapper glass-card rounded-3xl p-6 md:p-10 border border-crimson/40 shadow-[0_0_40px_rgba(255,0,85,0.2)] relative overflow-hidden transition-all duration-700">
+                <div id="envelopeContainer" class="glass-card rounded-3xl p-6 md:p-10 border border-crimson/40 shadow-[0_0_40px_rgba(255,0,85,0.2)] relative overflow-hidden transition-all duration-700">
                     
                     <!-- Decorative Floating Background Hearts inside card -->
                     <div class="absolute -top-10 -right-10 text-crimson/10 text-9xl pointer-events-none font-serif">♥</div>
@@ -571,7 +465,7 @@
                 <div class="photo-gallery-header">
                     <div>
                         <div class="photo-gallery-kicker">Frames of us</div>
-                        <h2 class="photo-gallery-title">The Good Stuff</h2>
+                        <h2 class="photo-gallery-title">Our Love Story</h2>
                     </div>
                     <p class="photo-gallery-subtitle">A little collection of the smiles, places, and moments I never want to forget.</p>
                 </div>
@@ -649,7 +543,7 @@
                         <span>100% Goofy! 🤪</span>
                     </div>
                     <div class="relative overflow-hidden rounded-2xl aspect-square bg-slate-900 mb-4 border border-rose-500/20">
-                        <img id="funnyImg0" data-media="908D13CB-D141-4DD4-A361-D20401127AFC.jpeg" alt="Goofy Laugh" class="w-full h-full object-cover">
+                        <img id="funnyImg0" data-media="908D13CB-D141-4DD4-A361-D20401127AFC.jpeg" alt="Goofy Laugh" loading="lazy" class="w-full h-full object-cover">
                         <button onclick="triggerFunnyUpload(0)" class="absolute bottom-2 right-2 bg-black/70 hover:bg-crimson text-white px-3 py-1.5 rounded-full text-xs flex items-center gap-1 backdrop-blur-md transition">
                             <i class="fa-solid fa-camera"></i>
                             <span>Swap Photo</span>
@@ -667,7 +561,7 @@
                         <span>Caught Off Guard 📸</span>
                     </div>
                     <div class="relative overflow-hidden rounded-2xl aspect-square bg-slate-900 mb-4 border border-rose-500/20">
-                        <img id="funnyImg1" data-media="littlemoment.JPG" alt="Silly Face" class="w-full h-full object-cover">
+                        <img id="funnyImg1" data-media="littlemoment.JPG" alt="Silly Face" loading="lazy" class="w-full h-full object-cover">
                         <button onclick="triggerFunnyUpload(1)" class="absolute bottom-2 right-2 bg-black/70 hover:bg-crimson text-white px-3 py-1.5 rounded-full text-xs flex items-center gap-1 backdrop-blur-md transition">
                             <i class="fa-solid fa-camera"></i>
                             <span>Swap Photo</span>
@@ -685,7 +579,7 @@
                         <span>Master Pouter 👑</span>
                     </div>
                     <div class="relative overflow-hidden rounded-2xl aspect-square bg-slate-900 mb-4 border border-rose-500/20">
-                        <img id="funnyImg2" data-media="908D13CB-D141-4DD4-A361-D20401127AFC.jpeg" alt="Cute Pout" class="w-full h-full object-cover">
+                        <img id="funnyImg2" data-media="908D13CB-D141-4DD4-A361-D20401127AFC.jpeg" alt="Cute Pout" loading="lazy" class="w-full h-full object-cover">
                         <button onclick="triggerFunnyUpload(2)" class="absolute bottom-2 right-2 bg-black/70 hover:bg-crimson text-white px-3 py-1.5 rounded-full text-xs flex items-center gap-1 backdrop-blur-md transition">
                             <i class="fa-solid fa-camera"></i>
                             <span>Swap Photo</span>
@@ -866,9 +760,6 @@
         }
 
         let audioCtx = null;
-        let isPlayingAudio = false;
-        let audioInterval = null;
-
         function initAudioEngine() {
             if (!audioCtx) {
                 audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -901,18 +792,15 @@
             const backgroundVideo = document.getElementById('backgroundVideo');
 
             if (backgroundVideo.paused) {
-                isPlayingAudio = true;
                 visualizer.classList.remove('hidden');
                 visualizer.classList.add('flex');
                 musicText.innerText = "Playing Daylight";
                 musicIcon.innerHTML = `<i class="fa-solid fa-volume-high text-crimson"></i>`;
                 backgroundVideo.play().catch(() => {
-                    isPlayingAudio = false;
                     musicText.innerText = "Play Daylight";
                 });
 
             } else {
-                isPlayingAudio = false;
                 visualizer.classList.add('hidden');
                 visualizer.classList.remove('flex');
                 musicText.innerText = "Play Daylight";
@@ -924,7 +812,6 @@
         function startBackgroundVideo() {
             const backgroundVideo = document.getElementById('backgroundVideo');
             backgroundVideo.play().then(() => {
-                isPlayingAudio = true;
                 document.getElementById('musicText').innerText = "Playing Daylight";
                 document.getElementById('musicIcon').innerHTML = `<i class="fa-solid fa-volume-high text-crimson"></i>`;
                 document.getElementById('visualizer').classList.remove('hidden');
@@ -938,7 +825,6 @@
             const backgroundVideo = document.getElementById('backgroundVideo');
             backgroundVideo.pause();
             backgroundVideo.currentTime = 0;
-            isPlayingAudio = false;
             document.getElementById('musicText').innerText = "Play Daylight";
             document.getElementById('musicIcon').innerHTML = `<i class="fa-solid fa-music text-crimson"></i>`;
             document.getElementById('visualizer').classList.add('hidden');
@@ -1100,7 +986,7 @@
             document.getElementById('dayCount').textContent = document.getElementById('counterDays').textContent;
         }
 
-        window.onload = function() {
+        window.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('[data-media]').forEach((image) => {
                 image.src = assetPath(image.dataset.media);
             });
@@ -1110,7 +996,7 @@
             setInterval(updateRelationshipCounter, 1000);
             // Optional preview trigger for debugging or quick view
             console.log("Romantic Birthday Wish Web App initialized!");
-        }
+        });
     </script>
 </body>
 </html>
